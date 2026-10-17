@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ============ Material 3 Type Scale（160dp 屏压缩版，层级保留） ============ -->
+    <style name="TextAppearance.MuteGuard.HeadlineSmall" parent="@android:style/TextAppearance.Material">
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingMultiplier">1.33</item>
+        <item name="android:textColor">@color/md_on_surface</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.MuteGuard.TitleLarge" parent="@android:style/TextAppearance.Material">
+        <item name="android:textSize">13sp</item>
+        <item name="android:lineSpacingMultiplier">1.3</item>
+        <item name="android:textColor">@color/md_on_surface</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.MuteGuard.TitleMedium" parent="@android:style/TextAppearance.Material">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingMultiplier">1.33</item>
+        <item name="android:textColor">@color/md_on_surface</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.MuteGuard.TitleSmall" parent="@android:style/TextAppearance.Material">
+        <item name="android:textSize">11sp</item>
+        <item name="android:lineSpacingMultiplier">1.33</item>
+        <item name="android:textColor">@color/md_on_surface</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.MuteGuard.BodyMedium" parent="@android:style/TextAppearance.Material">
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingMultiplier">1.3</item>
+        <item name="android:textColor">@color/md_on_surface_variant</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.MuteGuard.BodySmall" parent="@android:style/TextAppearance.Material">
+        <item name="android:textSize">9sp</item>
+        <item name="android:lineSpacingMultiplier">1.33</item>
+        <item name="android:textColor">@color/md_on_surface_variant</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.MuteGuard.LabelMedium" parent="@android:style/TextAppearance.Material">
+        <item name="android:textSize">9sp</item>
+        <item name="android:lineSpacingMultiplier">1.33</item>
+        <item name="android:textColor">@color/md_on_surface_variant</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.MuteGuard.LabelSmall" parent="@android:style/TextAppearance.Material">
+        <item name="android:textSize">8sp</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
+        <item name="android:textColor">@color/md_on_surface_variant</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- ============ Theme ============ -->
+    <style name="Theme.MuteGuard" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/md_primary</item>
+        <item name="android:colorPrimaryDark">@color/md_surface</item>
+        <item name="android:colorAccent">@color/md_primary</item>
+        <item name="android:windowBackground">@color/md_surface</item>
+        <item name="android:statusBarColor">@color/md_surface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/md_surface</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:textColorPrimary">@color/md_on_surface</item>
+        <item name="android:textColorSecondary">@color/md_on_surface_variant</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Activity</item>
+    </style>
+
+</resources>

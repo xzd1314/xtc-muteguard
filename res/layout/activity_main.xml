@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_surface"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    android:focusableInTouchMode="true"
+    android:descendantFocusability="beforeDescendants">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/screen_margin"
+        android:paddingRight="@dimen/screen_margin"
+        android:paddingTop="@dimen/space_m"
+        android:paddingBottom="@dimen/space_m">
+
+        <!-- ============ TopAppBar ============ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/topappbar_height"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/app_name"
+                android:textAppearance="@style/TextAppearance.MuteGuard.TitleLarge" />
+
+            <ImageButton
+                android:id="@+id/btnRefresh"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/action_refresh"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_refresh"
+                android:tint="@color/md_on_surface_variant" />
+        </LinearLayout>
+
+        <!-- ============ 状态卡片 ============ -->
+        <LinearLayout
+            android:id="@+id/cardStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_gap"
+            android:background="@drawable/bg_card_primary"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="@dimen/card_padding">
+
+            <ImageView
+                android:id="@+id/ivStatusIcon"
+                android:layout_width="@dimen/icon_l"
+                android:layout_height="@dimen/icon_l"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_shield"
+                android:tint="@color/md_on_primary_container"
+                android:contentDescription="@string/title_status" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/space_m"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="@string/status_unknown"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.TitleMedium"
+                    android:textColor="@color/md_on_primary_container" />
+
+                <TextView
+                    android:id="@+id/tvStatusDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="@string/status_blocked_desc"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.BodySmall"
+                    android:textColor="@color/md_on_primary_container"
+                    android:alpha="0.75" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ============ 禁言记录卡片 ============ -->
+        <LinearLayout
+            android:id="@+id/cardRecord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_gap"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="@dimen/card_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_s"
+                    android:layout_height="@dimen/icon_s"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_schedule"
+                    android:tint="@color/md_on_surface_variant"
+                    android:contentDescription="@string/title_record" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_s"
+                    android:text="@string/label_end"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.LabelMedium" />
+
+                <TextView
+                    android:id="@+id/tvEnd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="@string/label_none"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.BodyMedium"
+                    android:textColor="@color/md_on_surface" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xs"
+                android:orientation="horizontal"
+                android:gravity="bottom">
+
+                <TextView
+                    android:id="@+id/tvRemain"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="@string/label_none"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.HeadlineSmall"
+                    android:textColor="@color/md_error" />
+
+                <TextView
+                    android:id="@+id/tvRemainLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/label_remain"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.LabelSmall" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ============ 开关卡片 ============ -->
+        <LinearLayout
+            android:id="@+id/cardSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_gap"
+            android:background="@drawable/bg_card"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="@dimen/card_padding">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/title_switch"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.TitleSmall" />
+
+                <TextView
+                    android:id="@+id/tvSwitchDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="@string/switch_desc_on"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.LabelSmall" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/swEnable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_s"
+                android:thumb="@drawable/switch_thumb"
+                android:track="@drawable/switch_track"
+                android:switchMinWidth="@dimen/switch_width"
+                android:focusable="false"
+                android:showText="false" />
+        </LinearLayout>
+
+        <!-- ============ 重启微聊按钮 ============ -->
+        <LinearLayout
+            android:id="@+id/btnRestart"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginTop="@dimen/card_gap"
+            android:background="@drawable/bg_button_primary"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="@dimen/icon_s"
+                android:layout_height="@dimen/icon_s"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_restart"
+                android:tint="@color/md_on_primary"
+                android:contentDescription="@string/action_restart" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_s"
+                android:text="@string/action_restart"
+                android:textSize="11sp"
+                android:textColor="@color/md_on_primary"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+
+        <!-- ============ 环境信息卡片 ============ -->
+        <LinearLayout
+            android:id="@+id/cardEnv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_gap"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="@dimen/card_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_magisk"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.LabelMedium" />
+
+                <TextView
+                    android:id="@+id/tvMagisk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="—"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.LabelMedium"
+                    android:textColor="@color/md_on_surface" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_xposed"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.LabelMedium" />
+
+                <TextView
+                    android:id="@+id/tvXposed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="—"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.LabelMedium"
+                    android:textColor="@color/md_on_surface" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_module"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.LabelMedium" />
+
+                <TextView
+                    android:id="@+id/tvModule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="—"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.LabelMedium"
+                    android:textColor="@color/md_on_surface" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_weichat"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.LabelMedium" />
+
+                <TextView
+                    android:id="@+id/tvWeichat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="—"
+                    android:textAppearance="@style/TextAppearance.MuteGuard.LabelMedium"
+                    android:textColor="@color/md_on_surface" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

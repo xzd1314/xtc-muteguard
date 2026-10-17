@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">解除微聊禁言工具</string>
+    <string name="module_desc">屏蔽小天才微聊禁言</string>
+
+    <string name="title_status">状态</string>
+    <string name="status_blocked">已屏蔽禁言</string>
+    <string name="status_blocked_desc">微聊可正常发送</string>
+    <string name="status_off">屏蔽禁言已关闭</string>
+    <string name="status_off_desc">微聊恢复原始限制</string>
+    <string name="status_inactive">模块未启用</string>
+    <string name="status_inactive_desc">请先在 EdXposed 中启用</string>
+    <string name="status_noroot">未获取 root</string>
+    <string name="status_unknown">检测中…</string>
+
+    <string name="title_record">禁言记录</string>
+    <string name="label_end">至</string>
+    <string name="label_remain">剩余</string>
+    <string name="label_none">—</string>
+    <string name="label_days">%1$d 天</string>
+
+    <string name="title_switch">屏蔽禁言</string>
+    <string name="switch_desc_on">已开启</string>
+    <string name="switch_desc_off">已关闭</string>
+
+    <string name="title_env">环境</string>
+    <string name="label_magisk">Magisk</string>
+    <string name="label_xposed">Xposed</string>
+    <string name="label_module">模块</string>
+    <string name="label_weichat">微聊</string>
+
+    <string name="action_refresh">刷新</string>
+    <string name="action_restart">重启微聊</string>
+
+    <string name="toast_no_root">未获取 root 权限</string>
+    <string name="toast_switch_ok">已更新，重启微聊生效</string>
+    <string name="toast_restarting">正在重启微聊…</string>
+    <string name="toast_restart_fail">重启失败，请手动启动微聊</string>
+</resources>

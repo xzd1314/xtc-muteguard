@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 目标设备：320×360 px @ 320dpi = 160×180 dp（超小屏，按 4dp 网格压缩） -->
+<resources>
+    <dimen name="space_xs">2dp</dimen>
+    <dimen name="space_s">4dp</dimen>
+    <dimen name="space_m">6dp</dimen>
+    <dimen name="space_l">8dp</dimen>
+
+    <dimen name="screen_margin">8dp</dimen>
+    <dimen name="card_padding">6dp</dimen>
+    <dimen name="card_gap">4dp</dimen>
+
+    <dimen name="shape_corner_card">8dp</dimen>
+    <dimen name="shape_corner_badge">6dp</dimen>
+    <dimen name="shape_corner_button">14dp</dimen>
+
+    <dimen name="icon_s">12dp</dimen>
+    <dimen name="icon_m">14dp</dimen>
+    <dimen name="icon_l">16dp</dimen>
+
+    <dimen name="topappbar_height">24dp</dimen>
+    <dimen name="button_size">24dp</dimen>
+    <dimen name="switch_width">32dp</dimen>
+</resources>
